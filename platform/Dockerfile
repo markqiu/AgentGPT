@@ -1,7 +1,5 @@
 FROM python:3.11-slim-buster as prod
 
-RUN sed -i 's/deb.debian.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apt/sources.list
-
 RUN apt-get update && apt-get install -y \
   default-libmysqlclient-dev \
   gcc \
@@ -10,8 +8,7 @@ RUN apt-get update && apt-get install -y \
   build-essential \
   && rm -rf /var/lib/apt/lists/*
 
-RUN python -m pip install -i https://pypi.tuna.tsinghua.edu.cn/simple --upgrade pip
-RUN pip config set global.index-url https://pypi.tuna.tsinghua.edu.cn/simple
+RUN python -m pip install --upgrade pip
 RUN pip install poetry
 
 # Configuring poetry
