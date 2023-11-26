@@ -18,7 +18,7 @@ COPY package*.json ./
 
 # Install dependencies
 RUN npm config set registry https://registry.npmmirror.com
-RUN npm install -g npm husky
+RUN npm install -g husky
 RUN npm ci
 
 # Copy the wait-for-db.sh script
