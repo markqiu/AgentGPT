@@ -25,6 +25,7 @@ RUN chmod +x /usr/local/bin/wait-for-db.sh
 # Copy the rest of the application code
 COPY . .
 COPY entrypoint.sh /
+RUN dos2unix /entrypoint.sh
 
 # Ensure correct line endings after these files are edited by windows
 RUN apk add --no-cache netcat-openbsd
