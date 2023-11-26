@@ -4,16 +4,16 @@ cd /next
 dos2unix wait-for-db.sh
 
 # copy .env file if not exists
-[ ! -f .env ] && [ -f .env.example ] && cp .env.example .env
-cp .env .env.temp
-dos2unix .env.temp
-cat .env.temp > .env
-rm .env.temp
+# [ ! -f .env ] && [ -f .env.example ] && cp .env.example .env
+# cp .env .env.temp
+# dos2unix .env.temp
+# cat .env.temp > .env
+# rm .env.temp
 
-source .env
+# source .env
 
 # Ensure DB is available before running Prisma commands
-./wait-for-db.sh localhost 3308
+./wait-for-db.sh ${MySQL.MYSQLHOST} ${MySQL.MYSQLPORT}
 
 # Run Prisma commands
 if [[ ! -f "/app/prisma/${DATABASE_URL:5}" ]]; then
