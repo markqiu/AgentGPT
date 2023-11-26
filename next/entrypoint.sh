@@ -3,7 +3,7 @@
 cd /next
 
 # Ensure DB is available before running Prisma commands
-./wait-for-db.sh ${MySQL.MYSQLHOST} ${MySQL.MYSQLPORT}
+./wait-for-db.sh ${{MYSQLHOST}} ${{MYSQLPORT}}
 
 # Run Prisma commands
 if [[ ! -f "/app/prisma/${DATABASE_URL:5}" ]]; then
