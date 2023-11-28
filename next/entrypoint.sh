@@ -14,4 +14,4 @@ fi
 # Generate Prisma client
 npx prisma generate
 
-npm run build && npm run start
+npm run start

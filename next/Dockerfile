@@ -26,7 +26,7 @@ COPY entrypoint.sh /
 
 # Ensure correct line endings after these files are edited by windows
 RUN apk add --no-cache netcat-openbsd
-
+RUN npm run build
 
 # Expose the port the app will run on
 EXPOSE 3000

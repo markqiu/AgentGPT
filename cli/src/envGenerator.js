@@ -59,11 +59,11 @@ const getEnvDefinition = (envValues, isDockerCompose, dbPort, platformUrl) => {
       REWORKD_PLATFORM_QIANFAN_SK: envValues.qianfanSk || '""',
     },
     "Database (Backend)": {
-      REWORKD_PLATFORM_DATABASE_USER: "reworkd_platform",
-      REWORKD_PLATFORM_DATABASE_PASSWORD: "reworkd_platform",
-      REWORKD_PLATFORM_DATABASE_HOST: "agentgpt_db",
-      REWORKD_PLATFORM_DATABASE_PORT: dbPort,
-      REWORKD_PLATFORM_DATABASE_NAME: "reworkd_platform",
+      REWORKD_PLATFORM_DB_USER: "reworkd_platform",
+      REWORKD_PLATFORM_DB_PASS: "reworkd_platform",
+      REWORKD_PLATFORM_DB_HOST: "agentgpt_db",
+      REWORKD_PLATFORM_DB_PORT: dbPort,
+      REWORKD_PLATFORM_DB_BASE: "reworkd_platform",
       REWORKD_PLATFORM_DATABASE_URL:
         "mysql://${REWORKD_PLATFORM_DATABASE_USER}:${REWORKD_PLATFORM_DATABASE_PASSWORD}@${REWORKD_PLATFORM_DATABASE_HOST}:${REWORKD_PLATFORM_DATABASE_PORT}/${REWORKD_PLATFORM_DATABASE_NAME}",
     },
